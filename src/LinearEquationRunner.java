@@ -16,13 +16,33 @@ public class LinearEquationRunner {
         int yTwo = Integer.parseInt(two, two.indexOf(", ") + 2, two.length() - 1, 10);
 
 
-        LinearEquation equ = new LinearEquation(xOne, yOne, xTwo, yTwo);
-        System.out.println(equ.slope());
-        System.out.println(equ.yIntercept());
-        System.out.println(equ.distance());
-        System.out.println(equ.equation());
+//        LinearEquation equ = new LinearEquation(xOne, yOne, xTwo, yTwo);
+//        System.out.println(equ.slope());
+//        System.out.println(equ.yIntercept());
+//        System.out.println(equ.distance());
+//        System.out.println(equ.equation());
 
-        System.out.println("The two points are (" + xOne + ", " + yOne + ") and (" + xTwo + ", " + yTwo + ")");
+//        System.out.println("The two points are (" + xOne + ", " + yOne + ") and (" + xTwo + ", " + yTwo + ")");
+
+        int x1 = -1;
+        int y1 = 5;
+        int x2 = 3;
+        int y2 = 10;
+        LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
+        System.out.println("Equation: " + equation.equation());
+        System.out.println("Slope: " + equation.slope());
+        System.out.println("y-intercept: " + equation.yIntercept());
+        System.out.println("Distance: " + equation.distance());
+        System.out.println();
+        System.out.println("----- Line info -----");
+        System.out.println(equation.lineInfo());
+
+
+//        System.out.println();
+//        double testX = 4;
+//        System.out.println("Coordinate for x: " + equation.coordinateForX(testX));
+
+
 
 
     }

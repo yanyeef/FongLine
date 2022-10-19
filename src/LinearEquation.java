@@ -21,19 +21,17 @@ public class LinearEquation {
         double sqaY = Math.pow(twoYs, 2);
         double sumBoth = sqaX + sqaY;
         double d = Math.sqrt(sumBoth);
-        return d;
+        return roundedToHundredth(d);
     }
 
     public double yIntercept() {
         double m = slope();
-        double yInt = (m*x1) - y1;
-        double yInt2 = (m*x2) -y2;
-        if (yInt2 == yInt){
-            return yInt;
-        }
-
-
-            return yInt;
+        double yInt = y1 - (m*x1);
+        double yInt2 = y2 - (m*x2) ;
+//        if (yInt2 == yInt){
+//            return roundedToHundredth(yInt);
+//        }
+            return roundedToHundredth(yInt);
     }
 
     public double slope(){
@@ -74,13 +72,17 @@ public class LinearEquation {
 
     }
 
-    public double roundedToHundredth() {
-        double x = Math.round(2);
+    public double roundedToHundredth(double num) {
+        double x = (double)Math.round(num*100)/100;
         return x;
     }
-//    public String lineInfo() {
-//
-//    }
+    public String lineInfo() {
+        return "The two points are (" + x1 +", " + y1+")" + " and (" + x2+", " + y2+")" +
+                "\nThe equation of the line between these points is:" + equation()
+                + "\nThe slope of the line is: " + slope()
+                + "\nThe y-intercept of the line is:" + yIntercept()
+                + "\n The distance between the two points is:" + distance();
+    }
 
 
 
