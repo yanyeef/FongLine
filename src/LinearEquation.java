@@ -31,7 +31,7 @@ public class LinearEquation {
         if (yInt2 == yInt){
             return yInt;
         }
-
+            return Math.round(yInt);
     }
 
     public double slope(){
@@ -55,16 +55,20 @@ public class LinearEquation {
             yNew = y - 2*y;
             xNew = Math.abs(x);
             sl = yNew + "/" + xNew;
-        } else {
+        }  else if(y % x == 0) {
+            sl = y/x + "";
+        }else {
             yNew = y;
             xNew= x;
             sl = yNew + "/" + xNew;
         }
 
-        if (yNew% xNew == 0) {
-            sl = yNew/xNew + "";
+        if(yIntercept() <0) {
+            return "y = " + sl + "x -" + Math.abs(yIntercept()) ;
         }
-        return sl;
+
+        return "y = " + sl + "x +" + yIntercept() + "" ;
+
 
     }
 

@@ -20,7 +20,7 @@ public class LinearEquationRunner {
         System.out.println(equ.slope());
         System.out.println(equ.yIntercept());
         System.out.println(equ.distance());
-
+        System.out.println(equ.equation());
 
         System.out.println("The two points are (" + xOne+ ", " + yOne + ") and (" + xTwo + ", " + yTwo + ")");
     }
