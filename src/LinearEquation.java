@@ -31,7 +31,9 @@ public class LinearEquation {
         if (yInt2 == yInt){
             return yInt;
         }
-            return Math.round(yInt);
+
+
+            return yInt;
     }
 
     public double slope(){
@@ -72,10 +74,17 @@ public class LinearEquation {
 
     }
 
-//    public double roundedToHundredth() {
-//
-//    }
+    public double roundedToHundredth() {
+        double x = Math.round(2);
+        return x;
+    }
 //    public String lineInfo() {
 //
 //    }
+
+
+
+
+
+
 }
