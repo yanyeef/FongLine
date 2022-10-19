@@ -15,6 +15,7 @@ public class LinearEquationRunner {
         int xTwo = Integer.parseInt(two, 1, two.indexOf(","), 10);
         int yTwo = Integer.parseInt(two, two.indexOf(", ") +2, two.length()-1 ,10);
 
+
         LinearEquation equ = new LinearEquation(xOne,yOne,xTwo,yTwo);
         equ.lineInfo();
 

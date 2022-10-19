@@ -12,7 +12,35 @@ public class LinearEquation {
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
+    }
 
+    public double distance() {
+        double twoXs = x2 - x1;
+        double sqaX = Math.pow(twoXs, 2);
+        double twoYs = y2 - y1;
+        double sqaY = Math.pow(twoYs, 2);
+        double sumBoth = sqaX + sqaY;
+        double d = Math.sqrt(sumBoth);
+        return d;
+    }
+
+    public double yIntercept() {
+
+
+    }
+
+    public double slope(){
+
+    }
+
+    public String equation() {
+
+    }
+
+    public double roundedToHundredth() {
+
+    }
+    public String lineInfo() {
 
     }
 }
