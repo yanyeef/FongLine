@@ -17,7 +17,9 @@ public class LinearEquationRunner {
 
 
         LinearEquation equ = new LinearEquation(xOne,yOne,xTwo,yTwo);
-        equ.lineInfo();
+        System.out.println(equ.slope());
+        System.out.println(equ.yIntercept());
+        System.out.println(equ.distance());
 
 
         System.out.println("The two points are (" + xOne+ ", " + yOne + ") and (" + xTwo + ", " + yTwo + ")");

@@ -25,22 +25,53 @@ public class LinearEquation {
     }
 
     public double yIntercept() {
-
+        double m = slope();
+        double yInt = (m*x1) - y1;
+        double yInt2 = (m*x2) -y2;
+        if (yInt2 == yInt){
+            return yInt;
+        }
 
     }
 
     public double slope(){
-
+        double y = y2 - y1;
+        double x = x2 - x1;
+        double s = y/x;
+        return s;
     }
 
     public String equation() {
+        int yNew;
+        int xNew;
+        String sl;
+        int y = y2 - y1;
+        int x = x2 - x1;
+        if (x < 0 && y <0) {
+            yNew = Math.abs(y);
+            xNew = Math.abs(x);
+            sl = yNew + "/" + xNew;
+        } else if ( x < 0 ) {
+            yNew = y - 2*y;
+            xNew = Math.abs(x);
+            sl = yNew + "/" + xNew;
+        } else {
+            yNew = y;
+            xNew= x;
+            sl = yNew + "/" + xNew;
+        }
+
+        if (yNew% xNew == 0) {
+            sl = yNew/xNew + "";
+        }
+        return sl;
 
     }
 
-    public double roundedToHundredth() {
-
-    }
-    public String lineInfo() {
-
-    }
+//    public double roundedToHundredth() {
+//
+//    }
+//    public String lineInfo() {
+//
+//    }
 }
