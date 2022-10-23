@@ -15,6 +15,11 @@ public class LinearEquationRunner {
         int xTwo = Integer.parseInt(two, 1, two.indexOf(","), 10);
         int yTwo = Integer.parseInt(two, two.indexOf(", ") + 2, two.length() - 1, 10);
 
+        if(xOne == xTwo) {
+            System.out.println("This forms a vertical line: x = " + xOne);
+            System.exit(20);
+        }
+
 
 //        LinearEquation equ = new LinearEquation(xOne, yOne, xTwo, yTwo);
 //        System.out.println(equ.slope());
