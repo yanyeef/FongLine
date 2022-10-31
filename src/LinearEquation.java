@@ -38,7 +38,7 @@ public class LinearEquation {
         double y = y2 - y1;
         double x = x2 - x1;
         double s = y/x;
-        return s;
+        return roundedToHundredth(s);
     }
 
     public String equation() {
@@ -47,27 +47,38 @@ public class LinearEquation {
         String sl;
         int y = y2 - y1;
         int x = x2 - x1;
-        if (x < 0 && y <0) {
+        if (y / x == 1) {
+            sl = "";
+        } else if (y / x == -1) {
+            sl = "-";
+        }else if(y % x == 0) {
+            int pro = y/x;
+            sl = pro + "";
+        } else if (x < 0 && y < 0) {
             yNew = Math.abs(y);
             xNew = Math.abs(x);
             sl = yNew + "/" + xNew;
-        } else if ( x < 0 ) {
+        } else if (x<0 && y%x ==0){
+            sl = "" + y/x;
+        }else if ( x < 0 ) {
             yNew = y - 2*y;
             xNew = Math.abs(x);
             sl = yNew + "/" + xNew;
-        }  else if(y % x == 0) {
-            sl = y/x + "";
-        }else {
+        } else {
             yNew = y;
             xNew= x;
             sl = yNew + "/" + xNew;
         }
 
+
         if(yIntercept() <0) {
-            return "y = " + sl + "x -" + Math.abs(yIntercept()) ;
+            return "y = " + sl + "x - " + Math.abs(yIntercept()) ;
+        }
+        if (yIntercept() == 0) {
+            return "y = " + sl +"x";
         }
 
-        return "y = " + sl + "x +" + yIntercept() + "" ;
+        return "y = " + sl + "x + " + yIntercept() + "" ;
 
 
     }
@@ -80,8 +91,14 @@ public class LinearEquation {
         return "The two points are (" + x1 +", " + y1+")" + " and (" + x2+", " + y2+")" +
                 "\nThe equation of the line between these points is:" + equation()
                 + "\nThe slope of the line is: " + slope()
-                + "\nThe y-intercept of the line is:" + yIntercept()
-                + "\n The distance between the two points is:" + distance();
+                + "\nThe y-intercept of the line is: " + yIntercept()
+                + "\n The distance between the two points is: " + distance();
+    }
+
+    public String coordinateForX(double yValue) {
+        double two = (slope()*yValue) + yIntercept();
+        return "(" + yValue + "," + two + ")";
+
     }
 
 
