@@ -47,12 +47,12 @@ public class LinearEquation {
         String sl;
         int y = y2 - y1;
         int x = x2 - x1;
-        if (y / x == 1) {
+        if ((double) y / x == 1) {
             sl = "";
-        } else if (y / x == -1) {
+        } else if ((double) y / x == -1) {
             sl = "-";
         }else if(y % x == 0) {
-            int pro = y/x;
+            double pro = y/x;
             sl = pro + "";
         } else if (x < 0 && y < 0) {
             yNew = Math.abs(y);
@@ -71,13 +71,15 @@ public class LinearEquation {
         }
 
 
-        if(yIntercept() <0) {
+
+
+        if ((yIntercept() >0|| yIntercept()<0 )&& (double) y/x ==0) {
+            return "y = " + yIntercept();
+        } else if(yIntercept() <0) {
             return "y = " + sl + "x - " + Math.abs(yIntercept()) ;
-        }
-        if (yIntercept() == 0) {
+        } else if (yIntercept() == 0) {
             return "y = " + sl +"x";
         }
-
         return "y = " + sl + "x + " + yIntercept() + "" ;
 
 
