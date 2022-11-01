@@ -27,8 +27,6 @@ public class LinearEquationRunner {
         double value = scan.nextDouble();
         System.out.println(equ.coordinateForX(value));
 
-//        System.out.println("The two points are (" + xOne + ", " + yOne + ") and (" + xTwo + ", " + yTwo + ")");
-
 
 
 

@@ -6,14 +6,14 @@ public class LinearEquation {
     private int x2;
     private int y2;
 
-
+    //constructor
     public LinearEquation(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
     }
-
+    //distance method
     public double distance() {
         double twoXs = x2 - x1;
         double sqaX = Math.pow(twoXs, 2);
@@ -24,16 +24,15 @@ public class LinearEquation {
         return roundedToHundredth(d);
     }
 
+    //y intercept method
     public double yIntercept() {
         double m = slope();
         double yInt = y1 - (m*x1);
         double yInt2 = y2 - (m*x2) ;
-//        if (yInt2 == yInt){
-//            return roundedToHundredth(yInt);
-//        }
-            return roundedToHundredth(yInt);
-    }
 
+        return roundedToHundredth(yInt);
+    }
+    // slope method
     public double slope(){
         double y = y2 - y1;
         double x = x2 - x1;
@@ -41,26 +40,27 @@ public class LinearEquation {
         return roundedToHundredth(s);
     }
 
+    //equation method
     public String equation() {
         int yNew;
         int xNew;
         String sl;
         int y = y2 - y1;
         int x = x2 - x1;
-        if ((double) y / x == 1) {
+        if ((double) y / x == 1) {              //if y and x are the same, x
             sl = "";
-        } else if ((double) y / x == -1) {
+        } else if ((double) y / x == -1) {      //if y and x = -1, just print -x
             sl = "-";
-        }else if(y % x == 0) {
+        }else if(y % x == 0) {                  //if y is a multiple of x, return whole number
             double pro = y/x;
             sl = pro + "";
-        } else if (x < 0 && y < 0) {
+        } else if (x < 0 && y < 0) {            // if x and y are negative, return positive
             yNew = Math.abs(y);
             xNew = Math.abs(x);
             sl = yNew + "/" + xNew;
-        } else if (x<0 && y%x ==0){
+        } else if (x<0 && y%x ==0){             //if x is neg and y is multiple of x
             sl = "" + y/x;
-        }else if ( x < 0 ) {
+        }else if ( x < 0 ) {                    // if x is negative
             yNew = y - 2*y;
             xNew = Math.abs(x);
             sl = yNew + "/" + xNew;
